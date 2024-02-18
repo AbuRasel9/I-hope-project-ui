@@ -37,112 +37,113 @@ class _HomeViewState extends State<HomeView> {
       //     },
       //   ),
       // ),
-      body: Stack(
-        children: [
-          SizedBox(height: 30,),
-          Container(
-            padding: EdgeInsets.only(top: 40),
-            color: Utils.primaryColor,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset("assets/images/iHopeImage.png",height: 28,width: 80,fit: BoxFit.cover,),
-                Row(
-                  children: [
-                    Text("BN",style: TextStyle(fontSize: 15,color: Colors.grey.shade300,),),
-                    Switch(
-                      // This bool value toggles the switch.
-                      value: light,
-
-                      activeColor: Colors.greenAccent,
-                      onChanged: (bool value) {
-                        // This is called when the user toggles the switch.
-                        setState(() {
-                          light = value;
-                        });
-                      },
-                    ),
-
-                    Text("EN",style: TextStyle(fontSize: 15,color: Colors.white,),),
-                    SizedBox(width: 15,),
-                    Icon(Icons.notifications_active,size: 24,),
-                    SizedBox(width: 15,),
-
-                    CircleAvatar(child: Image.asset("assets/images/profileImage.png"),),
-                    SizedBox(width: 10,),
-                  ],
-                ),
-
-                // Positioned(child: TextFormField(
-                //   decoration: buildInputDecoration(text: "Enter name"),
-                // ))
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(15),
-            child: SingleChildScrollView(
-              child: Column(
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: 40),
+              color: Utils.primaryColor,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(height: 50,),
-                  Column(
+                  Image.asset("assets/images/iHopeImage.png",height: 28,width: 80,fit: BoxFit.cover,),
+                  Row(
                     children: [
-                      const SizedBox(
-                        height: 250,
-                        child: GridViewCardWidget(
-                          listItem: [
-                            {
-                              "imageUrl": "assets/images/uploadPrescription.png",
-                              "text1": "Upload",
-                              "text2": "Prescription"
-                            },
-                            {
-                              "imageUrl": "assets/images/uploadPrescription.png",
-                              "text1": "All",
-                              "text2": "Self Test"
-                            }
-                          ],
-                        ),
+                      Text("BN",style: TextStyle(fontSize: 15,color: Colors.grey.shade300,),),
+                      Switch(
+                        // This bool value toggles the switch.
+                        value: light,
+        
+                        activeColor: Colors.greenAccent,
+                        onChanged: (bool value) {
+                          // This is called when the user toggles the switch.
+                          setState(() {
+                            light = value;
+                          });
+                        },
                       ),
-                      //slider ..........=>
-                      CarouselSliderWidget(),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      // NewFetureGridView()
-                      Container(
-                        padding: EdgeInsets.all(10),
-
-                        color: Utils.lightColor,
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                NewFetureCard(),
-                                NewFetureCard(),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                NewFetureCard(),
-                                NewFetureCard(),
-                              ],
-                            )
-                          ],
-                        ),
-                      )
-
-                      // SizedBox(
-                      //   child: NewFetureGridView(),
-                      // )
-
+        
+                      Text("EN",style: TextStyle(fontSize: 15,color: Colors.white,),),
+                      SizedBox(width: 15,),
+                      Icon(Icons.notifications_active,size: 24,),
+                      SizedBox(width: 15,),
+        
+                      CircleAvatar(child: Image.asset("assets/images/profileImage.png"),),
+                      SizedBox(width: 10,),
                     ],
                   ),
+        
+                  // Positioned(child: TextFormField(
+                  //   decoration: buildInputDecoration(text: "Enter name"),
+                  // ))
                 ],
               ),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: 50,),
+                    Column(
+                      children: [
+                        const SizedBox(
+                          height: 250,
+                          child: GridViewCardWidget(
+                            listItem: [
+                              {
+                                "imageUrl": "assets/images/uploadPrescription.png",
+                                "text1": "Upload",
+                                "text2": "Prescription"
+                              },
+                              {
+                                "imageUrl": "assets/images/uploadPrescription.png",
+                                "text1": "All",
+                                "text2": "Self Test"
+                              }
+                            ],
+                          ),
+                        ),
+                        //slider ..........=>
+                        CarouselSliderWidget(),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        // NewFetureGridView()
+                        Container(
+                          padding: EdgeInsets.all(10),
+        
+                          color: Utils.lightColor,
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  NewFetureCard(),
+                                  NewFetureCard(),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  NewFetureCard(),
+                                  NewFetureCard(),
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+        
+                        // SizedBox(
+                        //   child: NewFetureGridView(),
+                        // )
+        
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationWidget(),
     );
