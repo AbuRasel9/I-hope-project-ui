@@ -78,6 +78,11 @@ class _HomeViewState extends State<HomeView> {
                   // ))
                 ],
               ),
+
+            ),
+            Container(
+              color: Utils.primaryColor,
+              child: TextFormField(decoration: buildInputDecoration(text: "abc"),),
             ),
             Padding(
               padding: const EdgeInsets.all(15),
