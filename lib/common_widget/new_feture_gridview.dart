@@ -2,43 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:i_hope_practise/screens/home_screen/widget/utils/color.dart';
 import 'package:i_hope_practise/screens/home_screen/widget/utils/text_style.dart';
 
-class NewFetureGridView extends StatefulWidget {
-  // final List<Map<String,dynamic>> listItem;
-  const NewFetureGridView({
-    super.key,
-    // required this.listItem,
-  });
-
-  @override
-  State<NewFetureGridView> createState() => _NewFetureGridViewState();
-}
-
-class _NewFetureGridViewState extends State<NewFetureGridView> {
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          // shrinkWrap:false,
-            itemCount: 4,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: .5,
-                crossAxisSpacing: 0,
-                mainAxisSpacing: 0),
-            itemBuilder: (context, index) {
-              return  ;
-            }),
-      ),
-    );
-  }
-}
-
 class NewFetureCard extends StatelessWidget {
+  final String text;
+  final String image;
   const NewFetureCard({
-    super.key,
+    super.key, required this.image, required this.text,
   });
 
   @override
@@ -54,12 +22,12 @@ class NewFetureCard extends StatelessWidget {
             SizedBox(
               height: 8,
             ),
-            Icon(Icons.cable),
-            // Image.asset(""),
+            // Icon(Icons.cable),
+            Image.asset(image),
             SizedBox(
               height: 8,
             ),
-            Text("Doctor",style: TextStyle(color: Color.fromRGBO(17, 95, 110, 1),fontSize: 18),),
+            Text(text,style: TextStyle(color: Color.fromRGBO(17, 95, 110, 1),fontSize: 18),),
             SizedBox(
               height: 5,
             ),

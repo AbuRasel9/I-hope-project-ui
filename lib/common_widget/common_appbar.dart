@@ -25,12 +25,6 @@ AppBar buildAppBar(Widget switchWidget) {
 
     ],
     title: Image.asset("assets/images/iHopeImage.png",height: 28,width: 80,fit: BoxFit.cover,),
-    bottom: PreferredSize(
-        preferredSize: Size(150, 100), child: Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: TextFormField(
-        decoration: buildInputDecoration(text: 'Search a doctor or health issue'),
-      ),
-    )),
+
   );
 }
