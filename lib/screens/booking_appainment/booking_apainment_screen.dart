@@ -21,7 +21,7 @@ class _BookingAppainmentScreenState extends State<BookingAppainmentScreen> {
               "Booking Appointment",
               style: headingTextStyle(),
             ),
-            Text("Digital Prescription"),
+            Text("Digital Prescription",style: headingTextStyle(),),
             Expanded(child: DigitalPrescriptionListview(listItem: [
               "Biopsy",
               "4D Scan",

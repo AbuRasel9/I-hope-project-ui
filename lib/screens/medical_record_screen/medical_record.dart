@@ -1,5 +1,7 @@
 import 'package:another_stepper/another_stepper.dart';
 import 'package:flutter/material.dart';
+import 'package:i_hope_practise/screens/booking_appainment/booking_apainment_screen.dart';
+import 'package:timelines/timelines.dart';
 
 class MedicalRecord extends StatefulWidget {
   const MedicalRecord({super.key});
@@ -18,10 +20,15 @@ class _MedicalRecordState extends State<MedicalRecord> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: CircleAvatar(
-                radius: 30,
-                backgroundColor: Colors.purple.withOpacity(.1),
-                child: Image.asset("assets/images/upload.png")),
+            child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>BookingAppainmentScreen()));
+              },
+              child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: Colors.purple.withOpacity(.1),
+                  child: Image.asset("assets/images/upload.png")),
+            ),
           )
         ],
       ),
@@ -52,62 +59,107 @@ class _MedicalRecordState extends State<MedicalRecord> {
 
 
             SizedBox(),
-
-            Column(
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CircleAvatar(child: Text("1"),),
-                Padding(
-                  padding: EdgeInsets.only(left: 4,top: 0),
-                  child: new RotatedBox(
-                      quarterTurns: 1,
-                      child: new Text("-------------------")
-                  ),
-
-                ),
-                CircleAvatar(child: Text("2"),),
-                Padding(
-                  padding: EdgeInsets.only(left: 4,top: 0),
-                  child: new RotatedBox(
-                      quarterTurns: 1,
-                      child: new Text("-------------------")
-                  ),
-
-                ),
-
-                CircleAvatar(child: Text("3"),),
-                Padding(
-                  padding: EdgeInsets.only(left: 4,top: 0),
-                  child: new RotatedBox(
-                      quarterTurns: 1,
-                      child: new Text("-------------------")
-                  ),
-
-                ),
-                CircleAvatar(child: Text("4"),),
-                Padding(
-                  padding: EdgeInsets.only(left: 4,top: 0),
-                  child: new RotatedBox(
-                      quarterTurns: 1,
-                      child: new Text("-------------------")
-                  ),
-
-                ),
-
-                CircleAvatar(child: Text("5"),),
-                Padding(
-                  padding: EdgeInsets.only(left: 4,top: 0),
-                  child: new RotatedBox(
-                      quarterTurns: 1,
-                      child: new Text("-------------------")
-                  ),
-
-                ),
-                CircleAvatar(child: Text("6"),),
+            FixedTimeline.tileBuilder(
+              builder: TimelineTileBuilder.connectedFromStyle(
+                connectionDirection: ConnectionDirection.before,
+                connectorStyleBuilder: (context, index) {
+                  return (index == 1) ? ConnectorStyle.dashedLine : ConnectorStyle.solidLine;
+                },
+                indicatorStyleBuilder: (context, index) => IndicatorStyle.dot,
+                itemExtent: 40.0,
+                itemCount: 3,
+              ),
+            )
 
 
-              ],
-            ),
+
+            // Expanded(
+            //   child: ListView.builder(
+            //       itemCount: 3,
+            //       itemBuilder: (context,index){
+            //         return Column(
+            //           crossAxisAlignment: CrossAxisAlignment.start,
+            //           children: [
+            //              CircleAvatar(child: Text("1"),),
+            //             Padding(
+            //               padding: EdgeInsets.only(left: 12,top: 0),
+            //               child:  RotatedBox(
+            //                   quarterTurns: 1,
+            //                   child:  Text("-------------------")
+            //               ),
+            //
+            //             ),
+            //             CircleAvatar(child: Text("2"),),
+            //             index==2?SizedBox(): Padding(
+            //               padding: EdgeInsets.only(left: 12,top: 0),
+            //               child: new RotatedBox(
+            //                   quarterTurns: 1,
+            //                   child:  Text("-------------------")
+            //               ),
+            //
+            //             ),
+            //
+            //           ],
+            //         );
+            //
+            //   }),
+            // )
+
+            // Column(
+            //   // crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     CircleAvatar(child: Text("1"),),
+            //     Padding(
+            //       padding: EdgeInsets.only(left: 4,top: 0),
+            //       child: new RotatedBox(
+            //           quarterTurns: 1,
+            //           child: new Text("-------------------")
+            //       ),
+            //
+            //     ),
+            //     CircleAvatar(child: Text("2"),),
+            //     Padding(
+            //       padding: EdgeInsets.only(left: 4,top: 0),
+            //       child: new RotatedBox(
+            //           quarterTurns: 1,
+            //           child: new Text("-------------------")
+            //       ),
+            //
+            //     ),
+            //
+            //     CircleAvatar(child: Text("3"),),
+            //     Padding(
+            //       padding: EdgeInsets.only(left: 4,top: 0),
+            //       child: new RotatedBox(
+            //           quarterTurns: 1,
+            //           child: new Text("-------------------")
+            //       ),
+            //
+            //     ),
+            //     CircleAvatar(child: Text("4"),),
+            //     Padding(
+            //       padding: EdgeInsets.only(left: 4,top: 0),
+            //       child: new RotatedBox(
+            //           quarterTurns: 1,
+            //           child: new Text("-------------------")
+            //       ),
+            //
+            //     ),
+            //
+            //     CircleAvatar(child: Text("5"),),
+            //     Padding(
+            //       padding: EdgeInsets.only(left: 4,top: 0),
+            //       child: new RotatedBox(
+            //           quarterTurns: 1,
+            //           child: new Text("-------------------")
+            //       ),
+            //
+            //     ),
+            //     CircleAvatar(child: Text("6"),),
+            //
+            //
+            //   ],
+            // ),
 
 
 
