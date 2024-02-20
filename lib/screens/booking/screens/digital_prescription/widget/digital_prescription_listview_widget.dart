@@ -21,11 +21,17 @@ class _DigitalPrescriptionListviewState extends State<DigitalPrescriptionListvie
         itemBuilder: (context, index) {
 
           return Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),color: Colors.white,),
-            padding: EdgeInsets.symmetric(vertical: 15,horizontal: 12),
+            decoration: BoxDecoration(
+              border:Border(
+                bottom: BorderSide(
+                    width: 2,color: Colors.black12
+                )
+              )),
+              // borderRadius: BorderRadius.circular(15),),
+            // padding: EdgeInsets.only(top: 10),
 
-            margin: EdgeInsets.only(top: 10),
-            child: Text(widget.listItem[index],textAlign:TextAlign.start,),
+            margin: EdgeInsets.only(top: 16,),
+            child: Text(widget.listItem[index],textAlign:TextAlign.start,style: TextStyle(fontSize: 20),),
           );
         });
   }

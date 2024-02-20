@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../screens/home_screen/widget/utils/color.dart';
+import 'utils/color.dart';
 
 InputDecoration buildInputDecoration({required String text}) {
   return InputDecoration(

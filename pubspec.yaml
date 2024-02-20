@@ -39,6 +39,8 @@ dependencies:
   curved_labeled_navigation_bar: ^2.0.2
   another_stepper: ^1.2.2
   timelines: ^0.1.0
+  smooth_page_indicator: ^1.1.0
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

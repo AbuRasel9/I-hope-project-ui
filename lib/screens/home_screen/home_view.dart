@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:i_hope_practise/common_widget/bottom_navigation_widget.dart';
+import 'package:i_hope_practise/screens/booking/screens/medical_record_screen/medical_record.dart';
+import 'package:i_hope_practise/screens/home_screen/widget/bottom_navigation_widget.dart';
 import 'package:i_hope_practise/common_widget/carosoul_slider_widget.dart';
-import 'package:i_hope_practise/common_widget/gridview_card_widget.dart';
-import 'package:i_hope_practise/common_widget/input_feild_decoration.dart';
-import 'package:i_hope_practise/common_widget/new_feture_gridview.dart';
-import 'package:i_hope_practise/common_widget/quick_access_part.dart';
-import 'package:i_hope_practise/common_widget/self_text_listview_widget.dart';
+import 'package:i_hope_practise/screens/home_screen/widget/gridview_card_widget.dart';
+import 'package:i_hope_practise/screens/home_screen/widget/input_feild_decoration.dart';
+import 'package:i_hope_practise/screens/home_screen/widget/quick_access_part.dart';
+import 'package:i_hope_practise/screens/home_screen/widget/self_text_listview_widget.dart';
 import 'package:i_hope_practise/screens/home_screen/widget/utils/color.dart';
 import 'package:i_hope_practise/screens/home_screen/widget/utils/text_style.dart';
-import 'package:i_hope_practise/screens/medical_record_screen/medical_record.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../common_widget/common_appbar.dart';
+import 'widget/common_appbar.dart';
+import 'widget/new_feture_gridview.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -20,14 +21,16 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final controller = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       //bottom navigation---------------------->
       bottomNavigationBar: const BottomNavigationWidget(),
 
-      appBar: buildAppBar(
-        Switch(
+      appBar: CustomAppBar(
+        switchWidget: Switch(
           // This bool value toggles the switch.
           value: light,
 
@@ -51,7 +54,8 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15, top: 18),
                 child: TextFormField(
-                  decoration: buildInputDecoration(text: "Search a doctor or health issue"),
+                  decoration: buildInputDecoration(
+                      text: "Search a doctor or health issue"),
                 ),
               ),
             ],
@@ -87,7 +91,8 @@ class _HomeViewState extends State<HomeView> {
                           ),
                           //slider ..........=>
                           const CarouselSliderWidget(),
-                          const SizedBox(
+
+                          SizedBox(
                             height: 40,
                           ),
                           // NewFetureGridView()
@@ -102,21 +107,32 @@ class _HomeViewState extends State<HomeView> {
                               children: [
                                 Text(
                                   "NewFeture",
-                                  style:
-                                      HeadingTextStyle(color: Colors.black),
+                                  style: HeadingTextStyle(color: Colors.black),
                                 ),
-                                const SizedBox(height: 10,),
+                                const SizedBox(
+                                  height: 10,
+                                ),
                                 const Row(
                                   children: [
-                                    NewFetureCard(image: 'assets/images/stethoscope.png', text: 'Doctor',),
-                                    NewFetureCard(image: "assets/images/ambulence.png", text: 'Ambulence',)
+                                    NewFetureCard(
+                                      image: 'assets/images/stethoscope.png',
+                                      text: 'Doctor',
+                                    ),
+                                    NewFetureCard(
+                                      image: "assets/images/ambulence.png",
+                                      text: 'Ambulence',
+                                    )
                                   ],
                                 ),
                                 const Row(
                                   children: [
-                                    NewFetureCard(image: "assets/images/healthCare.png", text: 'Health Care',),
                                     NewFetureCard(
-                                      image: 'assets/images/pharmecy.png', text: 'Pharmecy',
+                                      image: "assets/images/healthCare.png",
+                                      text: 'Health Care',
+                                    ),
+                                    NewFetureCard(
+                                      image: 'assets/images/pharmecy.png',
+                                      text: 'Pharmecy',
                                     ),
                                   ],
                                 )
@@ -143,13 +159,11 @@ class _HomeViewState extends State<HomeView> {
                         child: Column(
                           children: [
                             Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
                                   "Self Test",
-                                  style:
-                                      HeadingTextStyle(color: Colors.black),
+                                  style: HeadingTextStyle(color: Colors.black),
                                 ),
                                 Text(
                                   "Show More",
@@ -184,17 +198,24 @@ class _HomeViewState extends State<HomeView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(left: 28.0,bottom: 10),
+                            padding:
+                                const EdgeInsets.only(left: 28.0, bottom: 10),
                             child: Text(
                               "Quick Access",
                               style: HeadingTextStyle(color: Colors.black),
                             ),
                           ),
-                           Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               quickAccessPart(
-                                onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>MedicalRecord()));},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              MedicalRecord()));
+                                },
                                 text: 'Appainment',
                                 imagePath: 'assets/images/appainment.png',
                               ),
@@ -210,12 +231,10 @@ class _HomeViewState extends State<HomeView> {
                                 text: 'Health Package',
                                 imagePath: 'assets/images/healthPackage.png',
                               ),
-
                             ],
                           )
                         ],
                       )
-
                     ],
                   ),
                 ),
@@ -230,4 +249,3 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
-
