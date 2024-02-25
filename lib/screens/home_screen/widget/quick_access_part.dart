@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:i_hope_practise/screens/home_screen/widget/utils/color.dart';
+import 'package:i_hope_practise/screens/home_screen/widget/utils/utils.dart';
 
 class quickAccessPart extends StatelessWidget {
   final VoidCallback? onPressed;

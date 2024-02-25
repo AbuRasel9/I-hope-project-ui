@@ -26,9 +26,10 @@ class CustomTimelineTile extends StatelessWidget {
 
           // Indicator
           Container(
-            padding: EdgeInsets.all(10),
-            width: 50.0,
-            height: 50.0,
+
+            padding: EdgeInsets.all(8),
+            width: 40.0,
+            height: 40.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(40),
               color: Colors.black12,
@@ -47,9 +48,9 @@ class CustomTimelineTile extends StatelessWidget {
           (isLast)?SizedBox():Row(
             children: [
               Container(
-                width: 5.0,
+                width: 3.0,
                 height: 200.0,
-                color: Colors.grey[400],
+                color: Colors.black26,
                 margin: EdgeInsets.only(top:  0.0,left: 20),
 
               ),

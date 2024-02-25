@@ -1,7 +1,7 @@
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
-import 'package:i_hope_practise/screens/home_screen/widget/utils/color.dart';
+import 'package:i_hope_practise/screens/home_screen/widget/utils/utils.dart';
 
 class BottomNavigationWidget extends StatelessWidget {
   const BottomNavigationWidget({

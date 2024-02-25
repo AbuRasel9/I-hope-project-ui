@@ -1,9 +1,8 @@
 import 'package:another_stepper/another_stepper.dart';
 import 'package:flutter/material.dart';
 
-import '../digital_prescription/digital_prescription_screen.dart';
-import 'custom_timeline_tile.dart';
-
+import '../digital_prescription/booking_appainment_screen.dart';
+import 'widget/custom_timeline_tile.dart';
 
 class MedicalRecord extends StatefulWidget {
   const MedicalRecord({super.key});
@@ -13,19 +12,18 @@ class MedicalRecord extends StatefulWidget {
 }
 
 class _MedicalRecordState extends State<MedicalRecord> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Medical Records"),
+        title: const Text("Medical Records"),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => BookingAppainmentScreen()));
+                // Navigator.push(context, MaterialPageRoute(
+                //     builder: (context) => BookingAppainmentScreen()));
               },
               child: CircleAvatar(
                   radius: 30,
@@ -41,44 +39,34 @@ class _MedicalRecordState extends State<MedicalRecord> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.search),
                 hintText: "Search File",
                 border: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.black45)),
               ),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                    padding: const EdgeInsets.only(top: 20, left: 20),
-                    child: Container(
-
-                    )
-                ),
-              ],
+            const SizedBox(
+              height: 10,
             ),
-
-
-            SizedBox(),
             Expanded(
               child: ListView.builder(
                 itemCount: 3,
                 itemBuilder: (BuildContext context, int index) {
                   return CustomTimelineTile(
-                    child: Text('Timeline Event 1'),
                     isFirst: index == 0 ? true : false,
-                    isLast: index == 2 ? true : false, onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (
-                        context) => BookingAppainmentScreen()));
-                  },
+                    isLast: index == 2 ? true : false,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const BookingAppainmentScreen()));
+                    },
+                    child: const Text('Timeline Event 1'),
                   );
                 },
               ),
             ),
-
-
           ],
         ),
       ),

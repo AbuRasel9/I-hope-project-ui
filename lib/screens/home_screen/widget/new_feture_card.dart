@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:i_hope_practise/screens/home_screen/widget/utils/color.dart';
-import 'package:i_hope_practise/screens/home_screen/widget/utils/text_style.dart';
+import 'package:i_hope_practise/screens/home_screen/widget/utils/utils.dart';
 
-class NewFetureCard extends StatelessWidget {
+class NewFeaturesCard extends StatelessWidget {
+  final Color backGroundColor;
   final String text;
   final String image;
-  const NewFetureCard({
-    super.key, required this.image, required this.text,
+  const NewFeaturesCard({
+    super.key, required this.image, required this.text, required this.backGroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: backGroundColor,
 
       // margin: EdgeInsets.all(10),
       child: Padding(
@@ -27,7 +28,7 @@ class NewFetureCard extends StatelessWidget {
             SizedBox(
               height: 8,
             ),
-            Text(text,style: TextStyle(color: Color.fromRGBO(17, 95, 110, 1),fontSize: 18),),
+            Text(text,style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold)),
             SizedBox(
               height: 5,
             ),

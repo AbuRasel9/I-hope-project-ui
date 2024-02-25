@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'utils/color.dart';
+import 'utils/utils.dart';
 bool light = true;
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {

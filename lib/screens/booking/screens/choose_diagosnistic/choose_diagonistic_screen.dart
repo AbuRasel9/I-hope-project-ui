@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:i_hope_practise/common_widget/button_widget.dart';
 import 'package:i_hope_practise/common_widget/text_style.dart';
 import 'package:i_hope_practise/screens/booking/screens/choose_diagosnistic/widget/listview.dart';
-import 'package:i_hope_practise/screens/booking/screens/select_lab_test/lab_test_screen/lab_test_screen.dart';
+import 'package:i_hope_practise/screens/booking/screens/select_lab_test/lab_test_screen.dart';
 
 class ChooseDiagonisticScreen extends StatefulWidget {
   const ChooseDiagonisticScreen({super.key});
