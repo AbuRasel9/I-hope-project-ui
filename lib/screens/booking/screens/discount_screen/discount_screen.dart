@@ -19,16 +19,16 @@ class _DiscountScreenState extends State<DiscountScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 150,
             ),
             Image.asset("assets/images/discount_screen_image/circle.png"),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             RichText(
-              text: TextSpan(
-                children: const <TextSpan>[
+              text: const TextSpan(
+                children: <TextSpan>[
                   TextSpan(
                       text: 'Discount Code :',
                       style: TextStyle(color: Colors.black, fontSize: 30)),
@@ -43,26 +43,26 @@ class _DiscountScreenState extends State<DiscountScreen> {
               ),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Your appointment has been requested ",
               style: TextStyle(fontSize: 20, color: Colors.black38),
             ),
-            Text(
+            const Text(
               "Use the discount code at counter.",
               style: TextStyle(fontSize: 20, color: Colors.black38),
             ),
-            SizedBox(
+            const SizedBox(
               height: 45,
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 35),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 35),
               decoration: BoxDecoration(
                   color: Colors.orangeAccent.shade100,
                   borderRadius: BorderRadius.circular(20)),
-              child: Column(
+              child: const Column(
                 children: [
                   Text("If you have any problem or any issue",
                       style: TextStyle(
@@ -82,11 +82,11 @@ class _DiscountScreenState extends State<DiscountScreen> {
                 ],
               ),
             ),
-         Spacer(),
+         const Spacer(),
             Container(
-              color: Color.fromRGBO(233, 236, 242, 1),
-              padding: EdgeInsets.symmetric(horizontal: 36, vertical: 20),
-              margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              color: const Color.fromRGBO(233, 236, 242, 1),
+              padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
               child: Row(
                 children: [
                   Image.asset(
@@ -95,17 +95,17 @@ class _DiscountScreenState extends State<DiscountScreen> {
                     width: 30,
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 55,
                   ),
-                  Text(
+                  const Text(
                     "Add Google Calendar",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   )
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             SizedBox(
@@ -116,7 +116,7 @@ class _DiscountScreenState extends State<DiscountScreen> {
                     onPressed: () {
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => HomeView()),
+                          MaterialPageRoute(builder: (context) => const HomeView()),
                           (route) => false);
                     },),)
 

@@ -20,7 +20,7 @@ class DateScheduleItem extends StatelessWidget {
       onTap: isDisable ? null : onTap,
       child: Container(
         width: 60,
-        margin: EdgeInsets.all(12),
+        margin: const EdgeInsets.all(12),
 
         // padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         decoration: BoxDecoration(
@@ -34,9 +34,8 @@ class DateScheduleItem extends StatelessWidget {
         ),
 
         child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.baseline,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
@@ -46,15 +45,10 @@ class DateScheduleItem extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                   color: isSelected ? Colors.white : Colors.black38),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
-            // Text("10",
-            //     style: TextStyle(
-            //         fontSize: 18,
-            //         fontWeight: FontWeight.w700,
-            //         color: isSelected ? Colors
-            //             .white : Colors.black)),
+
           ],
         ),
       ),

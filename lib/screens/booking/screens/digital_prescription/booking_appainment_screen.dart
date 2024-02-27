@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:i_hope_practise/common_widget/button_widget.dart';
 import 'package:i_hope_practise/common_widget/text_style.dart';
-import 'package:i_hope_practise/screens/booking/screens/expacted_arrival/expacted_Arival_screen.dart';
+import 'package:i_hope_practise/screens/booking/screens/choose_diagosnistic/choose_diagonistic_screen.dart';
+import 'package:i_hope_practise/screens/booking/screens/digital_prescription/widget/digital_prescription_item.dart';
 
-
-class BookingAppainmentScreen extends StatefulWidget {
-
-  const BookingAppainmentScreen({super.key});
+class BookingAppointmentScreen extends StatefulWidget {
+  const BookingAppointmentScreen({super.key});
 
   @override
-  State<BookingAppainmentScreen> createState() =>
-      _BookingAppainmentScreenState();
+  State<BookingAppointmentScreen> createState() =>
+      _BookingAppointmentScreenState();
 }
 
-class _BookingAppainmentScreenState extends State<BookingAppainmentScreen> {
-  List digitalPrescriptionListItem= [
-      "Biopsy",
-      "4D Scan",
-      "CBC / Hemogram Test	",
-      "Dengue IgG Test	",
-      "Hemoglobin (Hb) Test	",
-      "Nerve Conduction Velocity (NCV)",
-    ];
+class _BookingAppointmentScreenState extends State<BookingAppointmentScreen> {
+  List digitalPrescriptionListItem = [
+    "Biopsy",
+    "4D Scan",
+    "CBC / Hemogram Test	",
+    "Dengue IgG Test	",
+    "Hemoglobin (Hb) Test	",
+    "Nerve Conduction Velocity (NCV)",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,35 +40,23 @@ class _BookingAppainmentScreenState extends State<BookingAppainmentScreen> {
           children: [
             Text(
               "Booking Appointment",
-              style: headingTextStyle(),
+              style: TextStyleUtils.headingTextStyle(),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.width / 2,
             ),
             Text(
               "Digital Prescription",
-              style: subtitleTextStyle(),
+              style: TextStyleUtils.subtitleTextStyle(),
             ),
-             Expanded(
-
-               child: ListView.builder(
-                   itemCount: digitalPrescriptionListItem.length,
-                   itemBuilder: (context,index){
-                 return  Container(
-                   decoration: const BoxDecoration(
-                       border:Border(
-                           bottom: BorderSide(
-                               width: 2,color: Colors.black12
-                           )
-                       )),
-
-
-                   margin: const EdgeInsets.only(top: 16,),
-                   child: Text(digitalPrescriptionListItem[index],style: const TextStyle(fontSize: 20),),
-                 );
-               }),
-               ),
-
+            Expanded(
+              child: ListView.builder(
+                  itemCount: digitalPrescriptionListItem.length,
+                  itemBuilder: (context, index) {
+                    return DigitalPrescriptionItem(
+                        presCriptionItem: digitalPrescriptionListItem[index]);
+                  }),
+            ),
             SizedBox(
               width: double.infinity,
               child: ButtonWidget(
@@ -77,7 +65,7 @@ class _BookingAppainmentScreenState extends State<BookingAppainmentScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ExpactedArivalScreen()));
+                          builder: (context) => ChooseDiagonisticScreen()));
                 },
               ),
             )

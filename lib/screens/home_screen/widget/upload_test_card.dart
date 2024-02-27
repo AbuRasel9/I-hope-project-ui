@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:i_hope_practise/screens/home_screen/widget/utils/utils.dart';
 
-class upload_test_card extends StatelessWidget {
+class UploadTestCard extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
   final String text1;
   final String text2;
   final String imageUrl;
 
-  const upload_test_card({
+  const UploadTestCard({
     super.key,
     required this.imageUrl,
     required this.text1,
@@ -23,7 +23,7 @@ class upload_test_card extends StatelessWidget {
       color: backgroundColor,
       // index == 0 ? Utils.primaryColor :
 
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         top: 5,
         left: 10,
       ),
@@ -38,7 +38,7 @@ class upload_test_card extends StatelessWidget {
                 child: Image.asset(imageUrl),
                 // Image.asset(widget.listItem[index]["imageUrl"],height: 80,width: 80,fit: BoxFit.cover,),),
               )),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Padding(

@@ -1,4 +1,3 @@
-import 'package:another_stepper/another_stepper.dart';
 import 'package:flutter/material.dart';
 
 import '../digital_prescription/booking_appainment_screen.dart';
@@ -60,7 +59,7 @@ class _MedicalRecordState extends State<MedicalRecord> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const BookingAppainmentScreen()));
+                              builder: (context) => const BookingAppointmentScreen()));
                     },
                     child: const Text('Timeline Event 1'),
                   );

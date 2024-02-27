@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:i_hope_practise/common_widget/button_widget.dart';
 import 'package:i_hope_practise/common_widget/text_style.dart';
-import 'package:i_hope_practise/screens/booking/screens/booking_info/booking_info_screen.dart';
-import 'package:i_hope_practise/screens/booking/screens/expacted_arrival/time_schedule_item.dart';
+import 'package:i_hope_practise/screens/booking/screens/booking_details/booking_details_screen.dart';
+import 'package:i_hope_practise/screens/booking/screens/expacted_arrival/widget/time_schedule_item.dart';
 import 'package:i_hope_practise/screens/booking/screens/expacted_arrival/widget/date_schedule_item.dart';
-import 'package:i_hope_practise/screens/booking/screens/expacted_arrival/widget/time_grid_view.dart';
 
 class ExpactedArivalScreen extends StatefulWidget {
   const ExpactedArivalScreen({super.key});
@@ -29,21 +28,21 @@ class _ExpactedArivalScreenState extends State<ExpactedArivalScreen> {
             children: [
               Text(
                 "Expected Arrival",
-                style: headingTextStyle(),
+                style:TextStyleUtils. headingTextStyle(),
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
                 "Step 2/3",
-                style: stepTextStyle(),
+                style:TextStyleUtils. stepTextStyle(),
               ),
               const SizedBox(
                 height: 40,
               ),
               Text(
                 "Select Schedule",
-                style: subtitleTextStyle(),
+                style:TextStyleUtils. subtitleTextStyle(),
               ),
               const SizedBox(
                 height: 10,
@@ -99,7 +98,7 @@ class _ExpactedArivalScreenState extends State<ExpactedArivalScreen> {
                     );
                   }),
 
-              Text(
+              const Text(
                 "Night",
                 style: TextStyle(
                     fontSize: 16,
@@ -131,7 +130,7 @@ class _ExpactedArivalScreenState extends State<ExpactedArivalScreen> {
                       },
                     );
                   }),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
 
@@ -143,7 +142,7 @@ class _ExpactedArivalScreenState extends State<ExpactedArivalScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const BookingInfoScreen()));
+                              builder: (context) => const BookingDetailsScreen()));
                     }),
               )
             ],

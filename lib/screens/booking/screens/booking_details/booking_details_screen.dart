@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:i_hope_practise/common_widget/button_widget.dart';
 import 'package:i_hope_practise/common_widget/text_style.dart';
-import 'package:i_hope_practise/screens/booking/screens/booking_info/widget/card_widget.dart';
-import 'package:i_hope_practise/screens/booking/screens/booking_info/widget/see_more_button.dart';
+import 'package:i_hope_practise/screens/booking/screens/booking_details/widget/booking_info_card.dart';
+import 'package:i_hope_practise/screens/booking/screens/booking_details/widget/see_more_button.dart';
 import 'package:i_hope_practise/screens/booking/screens/discount_screen/discount_screen.dart';
 import 'package:i_hope_practise/screens/booking/widget/payment_info.dart';
 
-class BookingInfoScreen extends StatefulWidget {
-  const BookingInfoScreen({super.key});
+class BookingDetailsScreen extends StatefulWidget {
+  const BookingDetailsScreen({super.key});
 
   @override
-  State<BookingInfoScreen> createState() => _BookingInfoScreenState();
+  State<BookingDetailsScreen> createState() => _BookingDetailsScreenState();
 }
 
-class _BookingInfoScreenState extends State<BookingInfoScreen> {
+class _BookingDetailsScreenState extends State<BookingDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
           "Booking Detail",
-          style: headingTextStyle(),
+          style:TextStyleUtils. headingTextStyle(),
         ),
       ),
       body: SingleChildScrollView(
@@ -34,72 +34,72 @@ class _BookingInfoScreenState extends State<BookingInfoScreen> {
                 children: [
                   Text(
                     "Booking Info",
-                    style: subtitleTextStyle(),
+                    style: TextStyleUtils.subtitleTextStyle(),
                   ),
                   Chip(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                         side:
-                            BorderSide(color: Color.fromRGBO(72, 189, 105, 1))),
-                    label: Text(
+                            const BorderSide(color: Color.fromRGBO(72, 189, 105, 1))),
+                    label: const Text(
                       "Confirm",
                       style: TextStyle(
                         color: Colors.white,
                       ),
                     ),
-                    backgroundColor: Color.fromRGBO(72, 189, 105, 1),
+                    backgroundColor: const Color.fromRGBO(72, 189, 105, 1),
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
-                padding: EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                    color: Color.fromRGBO(233, 236, 242, 1),
+                    color: const Color.fromRGBO(233, 236, 242, 1),
                     borderRadius: BorderRadius.circular(15)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CardWidget(
+                    BookingInfoCard(
                       imagePath: 'assets/images/calender.png',
                       text2: '08.00 AM',
                       titleText: 'Date & Time',
                       text1: "Monday, 20 Jun 2022",
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
-                    CardWidget(
+                    BookingInfoCard(
                       imagePath: 'assets/images/family.png',
                       text2: 'Sarak,Panthapath, Dhaka 1205',
                       titleText: 'Appointment',
                       text1: "18 Bir Uttam Qazi Nuruzzaman ",
-                      seeMoreButton: SeeMoreButton(),
+                      seeMoreButton: const SeeMoreButton(),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 20,),
-              CardWidget(
+              const SizedBox(height: 20,),
+              BookingInfoCard(
                 imagePath: "assets/images/doctor2.png",
                 imagePath2: "assets/images/call.png",
                 titleText: 'Diagonistic Info',
                 text1: "Hospital & Diagonistic",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
                 "Payment Info",
-                style: headingTextStyle(),
+                style:TextStyleUtils. headingTextStyle(),
               ),
-              PaymentInfo(totalPrice: 1000),
-              SizedBox(
+              const PaymentInfo(totalPrice: 1000),
+              const SizedBox(
                 height: 50,
               ),
               SizedBox(
@@ -111,7 +111,7 @@ class _BookingInfoScreenState extends State<BookingInfoScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DiscountScreen()));
+                              builder: (context) => const DiscountScreen()));
                     }),
               )
             ],

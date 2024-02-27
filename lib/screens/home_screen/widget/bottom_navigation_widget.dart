@@ -16,20 +16,20 @@ class BottomNavigationWidget extends StatelessWidget {
       color:Utils.lightColor,
       backgroundColor: Colors.white,
       buttonBackgroundColor: Utils.primaryColor,
-      items: [
-        const CurvedNavigationBarItem(
+      items: const [
+        CurvedNavigationBarItem(
           child: Icon(Icons.home_outlined),
           label: 'Home',
         ),
-        const CurvedNavigationBarItem(
+        CurvedNavigationBarItem(
           child: Icon(Icons.add),
           label: 'Search',
         ),
-        const CurvedNavigationBarItem(
+        CurvedNavigationBarItem(
           child: Icon(Icons.message),
           label: 'Chat',
         ),
-        const CurvedNavigationBarItem(
+        CurvedNavigationBarItem(
           child: Icon(Icons.person_pin),
           label: 'Feed',
         ),

@@ -82,7 +82,7 @@ class _HomeViewState extends State<HomeView> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: upload_test_card(
+                              child: UploadTestCard(
                                 imageUrl:
                                     'assets/images/uploadPrescription.png',
                                 text1: 'Upload',
@@ -92,7 +92,7 @@ class _HomeViewState extends State<HomeView> {
                               ),
                             ),
                             Expanded(
-                              child: upload_test_card(
+                              child: UploadTestCard(
                                 imageUrl: 'assets/images/microScopeImage .png',
                                 text1: 'All',
                                 text2: 'Self Test',
@@ -111,7 +111,6 @@ class _HomeViewState extends State<HomeView> {
                     const SizedBox(
                       height: 40,
                     ),
-                    // NewFetureGridView()
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),

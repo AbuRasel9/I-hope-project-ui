@@ -16,12 +16,12 @@ class SeeMoreButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text(
+          const Text(
             'See More',
             style: TextStyle(color: Colors.white),
           ),
           // <-- Text
-          SizedBox(
+          const SizedBox(
             width: 5,
           ),
           Image.asset(

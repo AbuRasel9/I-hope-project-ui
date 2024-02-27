@@ -5,7 +5,7 @@ import 'utils/utils.dart';
 
 InputDecoration buildInputDecoration({required String text}) {
   return InputDecoration(
-      prefixIcon: Icon(Icons.search),
+      prefixIcon: const Icon(Icons.search),
       hintText: text,
       fillColor: Utils.lightColor,
       filled: true,

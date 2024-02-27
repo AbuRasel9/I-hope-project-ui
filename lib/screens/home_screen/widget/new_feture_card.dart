@@ -20,19 +20,19 @@ class NewFeaturesCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             // Icon(Icons.cable),
             Image.asset(image),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
-            Text(text,style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold)),
-            SizedBox(
+            Text(text,style: const TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold)),
+            const SizedBox(
               height: 5,
             ),
-            Text("Lorem Ipsum is simply \n& dummy text of the...")
+            const Text("Lorem Ipsum is simply \n& dummy text of the...")
           ],
         ),
       ),

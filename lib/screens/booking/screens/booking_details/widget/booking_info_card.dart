@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CardWidget extends StatelessWidget {
+class BookingInfoCard extends StatelessWidget {
   final Widget? seeMoreButton;
   final String imagePath;
   final String? imagePath2;
@@ -8,7 +8,7 @@ class CardWidget extends StatelessWidget {
   final String text1;
   final String? text2;
 
-  CardWidget({
+  const BookingInfoCard({
     super.key,
     this.imagePath2,
     required this.imagePath,
@@ -24,21 +24,21 @@ class CardWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image.asset(imagePath),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(titleText,
-                style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
-            SizedBox(
+                style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
+            const SizedBox(
               height: 8,
             ),
             Text(text1,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 17, color: Color.fromRGBO(128, 141, 158, 1))),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             text2 == null
@@ -50,10 +50,10 @@ class CardWidget extends StatelessWidget {
             )
                 : Text(
               text2!,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 17, color: Color.fromRGBO(128, 141, 158, 1)),
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             SizedBox(child: seeMoreButton)
           ],
         )

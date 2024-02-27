@@ -41,6 +41,6 @@ class TimeScheduleItem extends StatelessWidget {
         surfaceTintColor: Colors.greenAccent,
       ),
     );
-    ;
+
   }
 }
